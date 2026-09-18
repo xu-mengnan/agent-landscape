@@ -1,0 +1,10 @@
+{
+  "validated_at_utc": "2026-09-18T16:28:33.013478+00:00",
+  "local_links_checked": 48,
+  "source_ids_defined": 31,
+  "source_ids_referenced": 31,
+  "evaluation_cases": 35,
+  "errors": [],
+  "status": "passed",
+  "limitations": "Local paths and declared evidence only; does not verify live external URLs, model quality, SDK behavior or production security."
+}

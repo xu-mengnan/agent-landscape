@@ -1,0 +1,35 @@
+test_approval_blocks_before_effect (test_reliability.ReliabilityTests.test_approval_blocks_before_effect) ... ok
+test_cancel_before_dispatch (test_reliability.ReliabilityTests.test_cancel_before_dispatch) ... ok
+test_cancel_cannot_undo_finished_effect (test_reliability.ReliabilityTests.test_cancel_cannot_undo_finished_effect) ... ok
+test_crash_before_remote_then_retry (test_reliability.ReliabilityTests.test_crash_before_remote_then_retry) ... ok
+test_duplicate_enqueue (test_reliability.ReliabilityTests.test_duplicate_enqueue) ... ok
+test_exhaustion_requires_reconciliation (test_reliability.ReliabilityTests.test_exhaustion_requires_reconciliation) ... ok
+test_finished_job_not_resent (test_reliability.ReliabilityTests.test_finished_job_not_resent) ... ok
+test_illegal_transition (test_reliability.ReliabilityTests.test_illegal_transition) ... ok
+test_invalid_memory_source (test_reliability.ReliabilityTests.test_invalid_memory_source) ... ok
+test_lost_ack_then_retry_one_effect (test_reliability.ReliabilityTests.test_lost_ack_then_retry_one_effect) ... ok
+test_memory_authoritative_conflict (test_reliability.ReliabilityTests.test_memory_authoritative_conflict) ... ok
+test_memory_expiry_boundary (test_reliability.ReliabilityTests.test_memory_expiry_boundary) ... ok
+test_memory_latest_revision (test_reliability.ReliabilityTests.test_memory_latest_revision) ... ok
+test_memory_tenant_isolation (test_reliability.ReliabilityTests.test_memory_tenant_isolation) ... ok
+test_memory_tombstone_blocks_resurrection (test_reliability.ReliabilityTests.test_memory_tombstone_blocks_resurrection) ... ok
+test_missing_job (test_reliability.ReliabilityTests.test_missing_job) ... ok
+test_negative_control_ack_loss_duplicates (test_reliability.ReliabilityTests.test_negative_control_ack_loss_duplicates) ... ok
+test_negative_control_late_validation (test_reliability.ReliabilityTests.test_negative_control_late_validation) ... ok
+test_negative_control_stale_overwrite (test_reliability.ReliabilityTests.test_negative_control_stale_overwrite) ... ok
+test_normal_delivery (test_reliability.ReliabilityTests.test_normal_delivery) ... ok
+test_payload_collision_is_error (test_reliability.ReliabilityTests.test_payload_collision_is_error) ... ok
+test_pre_execution_authorization (test_reliability.ReliabilityTests.test_pre_execution_authorization) ... ok
+test_real_child_process_exit_and_restart (test_reliability.ReliabilityTests.test_real_child_process_exit_and_restart) ... ok
+test_remote_dedup_under_concurrent_calls (test_reliability.ReliabilityTests.test_remote_dedup_under_concurrent_calls) ... ok
+test_remote_payload_collision_is_error (test_reliability.ReliabilityTests.test_remote_payload_collision_is_error) ... ok
+test_tenant_dedup_isolation (test_reliability.ReliabilityTests.test_tenant_dedup_isolation) ... ok
+test_terminal_state (test_reliability.ReliabilityTests.test_terminal_state) ... ok
+test_two_writers_one_version_winner (test_reliability.ReliabilityTests.test_two_writers_one_version_winner) ... ok
+test_versioned_rejects_stale_callback (test_reliability.ReliabilityTests.test_versioned_rejects_stale_callback) ... ok
+test_versioned_valid_flow (test_reliability.ReliabilityTests.test_versioned_valid_flow) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 2.501s
+
+OK

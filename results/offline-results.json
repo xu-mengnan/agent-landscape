@@ -1,0 +1,146 @@
+{
+  "evidence": "E: original offline mechanisms only",
+  "started_at_utc": "2026-09-18T16:19:10.946404+00:00",
+  "finished_at_utc": "2026-09-18T16:19:13.456808+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "sqlite": "3.46.1",
+  "network_calls": 0,
+  "model_calls": 0,
+  "provider_frameworks_executed": [],
+  "framework_modules_available": {
+    "langgraph": false,
+    "agents": false,
+    "google.adk": false
+  },
+  "tests_run": 30,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": 30,
+  "planned_real_model_trials": 420,
+  "real_model_trials_completed": 0,
+  "important_note": "Negative-control tests pass by reproducing a known unsafe outcome. The suite pass rate is not an Agent success rate.",
+  "tests": [
+    {
+      "test": "test_reliability.ReliabilityTests.test_approval_blocks_before_effect",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_cancel_before_dispatch",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_cancel_cannot_undo_finished_effect",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_crash_before_remote_then_retry",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_duplicate_enqueue",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_exhaustion_requires_reconciliation",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_finished_job_not_resent",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_illegal_transition",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_invalid_memory_source",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_lost_ack_then_retry_one_effect",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_memory_authoritative_conflict",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_memory_expiry_boundary",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_memory_latest_revision",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_memory_tenant_isolation",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_memory_tombstone_blocks_resurrection",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_missing_job",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_negative_control_ack_loss_duplicates",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_negative_control_late_validation",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_negative_control_stale_overwrite",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_normal_delivery",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_payload_collision_is_error",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_pre_execution_authorization",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_real_child_process_exit_and_restart",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_remote_dedup_under_concurrent_calls",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_remote_payload_collision_is_error",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_tenant_dedup_isolation",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_terminal_state",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_two_writers_one_version_winner",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_versioned_rejects_stale_callback",
+      "status": "passed"
+    },
+    {
+      "test": "test_reliability.ReliabilityTests.test_versioned_valid_flow",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+[
+  {
+    "id": "S01",
+    "title": "OpenAI Agents SDK overview",
+    "url": "https://openai.github.io/openai-agents-python/",
+    "evidence": "D",
+    "version_scope": "滚动文档；未锁定安装包版本",
+    "claim": "Agent、Runner、handoff、tools 与 SDK 定位",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S02",
+    "title": "OpenAI Guardrails",
+    "url": "https://openai.github.io/openai-agents-python/guardrails/",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "输入检查并行默认值、首尾 Agent 覆盖与工具检查边界",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S03",
+    "title": "OpenAI Sessions",
+    "url": "https://openai.github.io/openai-agents-python/sessions/",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "会话历史、恢复时同一 session、与服务端 continuation 的互斥约束",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S04",
+    "title": "OpenAI Tracing",
+    "url": "https://openai.github.io/openai-agents-python/tracing/",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "默认追踪、敏感数据采集配置、导出处理器",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S05",
+    "title": "OpenAI guardrail.py",
+    "url": "https://github.com/openai/openai-agents-python/blob/main/src/agents/guardrail.py",
+    "evidence": "S",
+    "version_scope": "blob 07475c8183835ae42d9242bcf0f1bcdb93732ed6；阅读1–220行",
+    "claim": "InputGuardrail 默认 run_in_parallel=True；检查结果与执行函数接口",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S06",
+    "title": "LangGraph overview",
+    "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "LangGraph、LangChain、Deep Agents 的职责分层",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S07",
+    "title": "LangGraph persistence",
+    "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "evidence": "D",
+    "version_scope": "滚动文档；durable-execution入口重定向至此",
+    "claim": "checkpointer 与 store、线程范围、内存与持久后端",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S08",
+    "title": "Deep Agents overview",
+    "url": "https://docs.langchain.com/oss/python/deepagents/overview",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "上下文卸载、子 Agent、文件系统、可选 planning/skills",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S09",
+    "title": "LangGraph InMemorySaver implementation",
+    "url": "https://github.com/langchain-ai/langgraph/blob/main/libs/checkpoint/langgraph/checkpoint/memory/__init__.py",
+    "evidence": "S",
+    "version_scope": "blob 0f0719c61fe64efddd0e1837eefd94eff23d39f9；阅读1–130行",
+    "claim": "默认 defaultdict 内存保存；源码说明调试测试用途",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S10",
+    "title": "Claude Agent SDK overview",
+    "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+    "evidence": "D",
+    "version_scope": "滚动文档",
+    "claim": "SDK、工具、权限、hooks、会话与托管产品区分",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S11",
+    "title": "Claude Managed Agents overview",
+    "url": "https://platform.claude.com/docs/en/managed-agents/overview",
+    "evidence": "D",
+    "version_scope": "Beta；文档列出 managed-agents-2026-04-01",
+    "claim": "托管执行、Agent/Environment/Session/Events 资源",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S12",
+    "title": "Claude Code overview",
+    "url": "https://code.claude.com/docs/en/overview",
+    "evidence": "D",
+    "version_scope": "滚动产品文档；未登录产品",
+    "claim": "终端/IDE/桌面/浏览器入口、文件与命令、工作流程",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S13",
+    "title": "Google ADK 2.0",
+    "url": "https://adk.dev/2.0/",
+    "evidence": "D",
+    "version_scope": "2.0版本系列；Python GA 2026-05-19，Go GA 2026-06-30；非最新补丁声明",
+    "claim": "图式/动态/协作工作流与1.x迁移风险",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S14",
+    "title": "Microsoft Agent Framework overview",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+    "evidence": "D",
+    "version_scope": "滚动文档；未安装",
+    "claim": "Agent、工作流、会话与 AutoGen/Semantic Kernel 迁移定位",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S15",
+    "title": "Microsoft workflow checkpoints",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints",
+    "evidence": "D",
+    "version_scope": "页面更新标注2026-09-04；Python1.13条目不代表最新版本",
+    "claim": "superstep检查点、恢复拓扑标识、反序列化边界",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S16",
+    "title": "DeepSeek Harness README",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/blob/main/README.md",
+    "evidence": "D",
+    "version_scope": "开发者预览；滚动main",
+    "claim": "Cordis、插件组合、兼容性变更提示",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S17",
+    "title": "DeepSeek Harness architecture",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/architecture.md",
+    "evidence": "D",
+    "version_scope": "滚动main；读取架构、事件、turn flow、session log章节；非整库审计",
+    "claim": "持久会话事实、运行时事件、上下文投影与崩溃限制",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S18",
+    "title": "DeepSeek Harness safety notice",
+    "url": "https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md",
+    "evidence": "D",
+    "version_scope": "开发者预览安全声明",
+    "claim": "未安全审计，不应按安全/生产就绪软件对待",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S19",
+    "title": "Get started with ChatGPT Work",
+    "url": "https://learn.chatgpt.com/docs/get-started-with-work",
+    "evidence": "D",
+    "version_scope": "滚动产品文档；未开展独立产品实验",
+    "claim": "以可审阅产物为目标、工具和交互、入口差异",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S20",
+    "title": "Running Codex safely at OpenAI",
+    "url": "https://openai.com/index/running-codex-safely/",
+    "evidence": "D",
+    "version_scope": "官方工程文章；非本项目部署记录",
+    "claim": "沙箱、审批、网络与日志的不同职责",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S21",
+    "title": "Cursor Agent overview",
+    "url": "https://cursor.com/docs/agent/overview",
+    "evidence": "D",
+    "version_scope": "滚动产品文档；未登录产品",
+    "claim": "编辑/终端/搜索、本地检查点与Git相互独立",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S22",
+    "title": "Devin introduction",
+    "url": "https://docs.devin.ai/get-started/devin-intro",
+    "evidence": "D",
+    "version_scope": "滚动产品文档；未登录产品",
+    "claim": "Shell/IDE/Browser、人工接管与任务交付；文档提醒行为可能变化",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S23",
+    "title": "Jules getting started",
+    "url": "https://jules.google/docs/",
+    "evidence": "D",
+    "version_scope": "页面标注experimental；未登录产品",
+    "claim": "GitHub集成、编码任务；不推断商业版或最新状态",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S24",
+    "title": "CrewAI introduction",
+    "url": "https://docs.crewai.com/v1.15.14/en/introduction/index.html",
+    "evidence": "D",
+    "version_scope": "检索入口重定向文档v1.15.14；不等于最新安装包",
+    "claim": "Flows 与 Crews 的组合定位",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S25",
+    "title": "LlamaIndex Agents",
+    "url": "https://developers.llamaindex.ai/python/framework/module_guides/deploying/agents/",
+    "evidence": "D",
+    "version_scope": "滚动文档；读取Agent/Tools/Multi-Agent章节",
+    "claim": "FunctionAgent、QueryEngineTool、AgentWorkflow",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S26",
+    "title": "Dify Workflow Studio",
+    "url": "https://www.dify.ai/workflows",
+    "evidence": "D",
+    "version_scope": "官方产品说明；未部署",
+    "claim": "可视化工作流、知识/工具/代码/人工节点与发布",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S27",
+    "title": "Coze Studio README",
+    "url": "https://github.com/coze-dev/coze-studio/blob/main/README.md",
+    "evidence": "D",
+    "version_scope": "blob 6f4221d806888d45596156bec6f5599294ea6a2f；读取1–140行",
+    "claim": "开源平台范围、Go后端、Eino致谢、公开网络部署风险提示",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S28",
+    "title": "Model Context Protocol specification",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+    "evidence": "D",
+    "version_scope": "latest入口解析为2026-07-28",
+    "claim": "工具/资源/提示接口；版本及可选扩展必须分别核验",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S29",
+    "title": "Agent2Agent protocol",
+    "url": "https://a2a-protocol.org/latest/",
+    "evidence": "D",
+    "version_scope": "滚动规范入口；未做互操作测试",
+    "claim": "跨独立Agent发现、任务及结果交换",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S30",
+    "title": "Agent Skills",
+    "url": "https://agentskills.io/home",
+    "evidence": "D",
+    "version_scope": "滚动规范入口",
+    "claim": "SKILL.md、元数据、渐进式加载及附属资源",
+    "accessed_on": "2026-09-18"
+  },
+  {
+    "id": "S31",
+    "title": "Demystifying evals for AI agents",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "evidence": "D",
+    "version_scope": "2026-01-09工程文章",
+    "claim": "任务、重复试验、轨迹、评分器与环境终态区分",
+    "accessed_on": "2026-09-18"
+  }
+]
