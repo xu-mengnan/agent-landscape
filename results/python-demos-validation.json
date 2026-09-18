@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-09-18T17:20:30.480538+00:00",
+  "python": "3.13.5",
+  "scope": "Syntax, preview, configuration gates, HTTP mocks only; no native framework execution",
+  "demo_count": 13,
+  "tests_run": 65,
+  "passed": 65,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "model_calls": 0,
+  "framework_demos_executed": 0,
+  "hosted_tasks_created": 0,
+  "dependency_installation": "Attempt to install framework dependencies failed because PyPI DNS was unavailable. No SDK execution was substituted with mocks."
+}
