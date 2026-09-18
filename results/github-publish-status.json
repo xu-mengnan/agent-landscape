@@ -3,13 +3,18 @@
   "baseline_branch": "main",
   "baseline_commit": "1321cecbfcec09e29efe44854266f8df4b7db5ea",
   "baseline_readme_blob": "36e6f70bf3c368db709da9551ca85dd95fd98a81",
-  "status": "WRITE_AUTHORIZED_PUBLICATION_IN_PROGRESS",
+  "research_baseline_date": "2026-09-18",
+  "status": "PUBLISHED_TO_MAIN",
+  "published_branch": "main",
   "remote_changes_created": true,
-  "commit_url": null,
-  "pull_request_url": null,
+  "research_commit": "3b906490bc167bdbcde679fe6645119af3e11e9a",
+  "merge_commit": "44c0b06d1ebda6959d438f0675a6582e70983058",
+  "commit_url": "https://github.com/xu-mengnan/agent-landscape/commit/44c0b06d1ebda6959d438f0675a6582e70983058",
+  "pull_request_url": "https://github.com/xu-mengnan/agent-landscape/pull/1",
+  "pull_request_merged": true,
   "issue_url": null,
-  "note": "Write authorization restored; research branch creation succeeded. Final commit and PR are recorded after remote verification. Historical 403 attempts retained.",
   "research_branch": "research/agent-landscape-2026-09-18",
+  "note": "The complete research package was published through PR #1 and merged normally into main. Before merge, the GitHub tree and the locally reconstructed Git tree matched exactly across all 48 files. This audit metadata is a subsequent update; commit_url identifies the content publication merge, not this metadata commit. Historical 403 attempts are retained. No paid calls, real-model experiments or production deployment were performed.",
   "historical_attempts": [
     {
       "action": "create_branch",
@@ -29,7 +34,22 @@
   ],
   "verification": {
     "branch_creation": "succeeded",
+    "research_tree_before_final_audit_metadata": "adedc06ef849528f51cead4bb8d106596d280377",
+    "local_reconstructed_tree_before_final_audit_metadata": "adedc06ef849528f51cead4bb8d106596d280377",
+    "exact_tree_match": true,
+    "files": 48,
+    "markdown_files": 32,
+    "local_links_checked": 48,
+    "source_ids_defined": 31,
+    "evaluation_cases_designed": 35,
     "offline_checks_passed": 30,
-    "model_calls": 0
+    "offline_check_failures": 0,
+    "offline_check_errors": 0,
+    "model_calls": 0,
+    "real_model_trials_completed": 0,
+    "planned_real_model_trials": 420,
+    "native_commercial_product_tests_performed": false,
+    "forced_ref_updates": false,
+    "normal_pull_request_merge": "succeeded"
   }
 }
