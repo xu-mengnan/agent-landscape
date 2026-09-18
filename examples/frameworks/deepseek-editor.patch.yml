@@ -1,0 +1,9 @@
+# 官方 sdk-minimal 教程中的配置：为最小 Profile 显式添加文件工具。
+# 这不是安全沙箱，sdk-minimal 原有 Shell 仍在。
+- insert:
+    - id: fs-local
+      name: '@deepseek-ai/dsh-fs-local'
+      config:
+        cwd: !!js process.cwd()
+    - id: tool-str-replace-editor
+      name: '@deepseek-ai/dsh-tool-str-replace-editor'

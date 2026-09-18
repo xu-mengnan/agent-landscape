@@ -98,6 +98,20 @@ Agent 能恢复，不代表外部动作不会重复。典型场景是“消息�
 
 ---
 
+## Python Demo：直接看框架差异
+
+新增了 **13 个最小 Python 示例**，每个只突出一个框架最有代表性的特点：Handoff、审批恢复、结构化输出、子 Agent、Hook、托管 Session、顺序工作流、类型化 Executor、插件、角色协作、RAG、Dify/Coze 平台 API。
+
+- [Demo 总入口](examples/frameworks/README.md)
+- [平台型示例前置配置](examples/frameworks/PLATFORMS.md)
+- [API 核验来源](examples/frameworks/SOURCES.md)
+
+建议先看 **02 LangGraph → 01 OpenAI → 07 Google ADK → 10 CrewAI**，最容易看出“流程编排、专家转交、顺序协作、角色任务”的区别。
+
+> 当前完成的是源码/接口核验和离线静态检查；由于本次环境无法从 PyPI 安装依赖，尚未把 13 个原生框架逐一真实跑通，也没有把它们算入 0/420 的模型评测。
+
+---
+
 ## 这次实际做了什么
 
 - 核验 **31 项**官方/上游来源；
