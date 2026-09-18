@@ -1,0 +1,15 @@
+[
+{"file":"01_openai_handoff.py","framework":"OpenAI Agents SDK","scenario":"接待转交订单专家","feature":"handoff + 函数工具 + 最终 Agent","required_env":["OPENAI_API_KEY","OPENAI_MODEL"],"mode":"online"},
+{"file":"02_langgraph_approval.py","framework":"LangGraph","scenario":"草稿审批后从 SQLite 继续","feature":"图 + interrupt / Command + 检查点","required_env":[],"mode":"local-framework"},
+{"file":"03_langchain_structured.py","framework":"LangChain","scenario":"报修描述变为工单对象","feature":"create_agent + ToolStrategy / Pydantic","required_env":["OPENAI_API_KEY","OPENAI_MODEL"],"mode":"online"},
+{"file":"04_deepagents_delegate.py","framework":"Deep Agents","scenario":"委派资料员并写虚拟报告","feature":"task 子 Agent + 内置文件工具","required_env":["OPENAI_API_KEY","OPENAI_MODEL"],"mode":"online"},
+{"file":"05_claude_readonly.py","framework":"Claude Agent SDK","scenario":"只读代码审查","feature":"Read + Hook + 流式消息","required_env":["ANTHROPIC_API_KEY","ANTHROPIC_MODEL"],"mode":"online"},
+{"file":"06_claude_managed.py","framework":"Claude Managed Agents","scenario":"创建云端会话并跟踪事件","feature":"托管 Session / Environment / Events","required_env":["ANTHROPIC_API_KEY","ANTHROPIC_AGENT_ID","ANTHROPIC_ENVIRONMENT_ID"],"mode":"hosted"},
+{"file":"07_google_adk_pipeline.py","framework":"Google ADK","scenario":"先写作，再审阅","feature":"SequentialAgent + output_key 共享状态","required_env":["GOOGLE_API_KEY","GOOGLE_MODEL"],"mode":"online"},
+{"file":"08_microsoft_typed_flow.py","framework":"Microsoft Agent Framework","scenario":"解析数量、汇总、展示","feature":"类型化 Executor + 消息边 + 最终输出","required_env":[],"mode":"local-framework"},
+{"file":"09_deepseek_plugins.py","framework":"DeepSeek Harness","scenario":"通过补丁增加文件工具","feature":"官方 Python SDK + profile / patches","required_env":["DEEPSEEK_API_KEY","DEEPSEEK_MODEL"],"mode":"isolated-online"},
+{"file":"10_crewai_roles.py","framework":"CrewAI","scenario":"分析员与编辑接力","feature":"角色 + Task.context + 顺序 Crew","required_env":["OPENAI_API_KEY","OPENAI_MODEL"],"mode":"online"},
+{"file":"11_llamaindex_rag.py","framework":"LlamaIndex","scenario":"检索虚构办公手册回答问题","feature":"Document → 索引 → QueryEngineTool → Agent","required_env":["OPENAI_API_KEY","OPENAI_MODEL","OPENAI_EMBEDDING_MODEL"],"mode":"online"},
+{"file":"12_dify_workflow.py","framework":"Dify","scenario":"Python 调用画布工作流","feature":"应用 API Key + inputs / outputs","required_env":["DIFY_BASE_URL","DIFY_API_KEY"],"mode":"platform"},
+{"file":"13_coze_workflow.py","framework":"Coze Studio / Coze","scenario":"指定已发布的教学流程","feature":"Workflow ID + OpenAPI + 平台输出","required_env":["COZE_BASE_URL","COZE_API_TOKEN","COZE_WORKFLOW_ID"],"mode":"platform"}
+]
