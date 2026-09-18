@@ -1,0 +1,35 @@
+{
+  "repository": "xu-mengnan/agent-landscape",
+  "baseline_branch": "main",
+  "baseline_commit": "1321cecbfcec09e29efe44854266f8df4b7db5ea",
+  "baseline_readme_blob": "36e6f70bf3c368db709da9551ca85dd95fd98a81",
+  "status": "WRITE_AUTHORIZED_PUBLICATION_IN_PROGRESS",
+  "remote_changes_created": true,
+  "commit_url": null,
+  "pull_request_url": null,
+  "issue_url": null,
+  "note": "Write authorization restored; research branch creation succeeded. Final commit and PR are recorded after remote verification. Historical 403 attempts retained.",
+  "research_branch": "research/agent-landscape-2026-09-18",
+  "historical_attempts": [
+    {
+      "action": "create_branch",
+      "status": 403,
+      "message": "Resource not accessible by integration"
+    },
+    {
+      "action": "create_file",
+      "status": 403,
+      "message": "Resource not accessible by integration"
+    },
+    {
+      "action": "create_issue",
+      "status": 403,
+      "message": "Resource not accessible by integration"
+    }
+  ],
+  "verification": {
+    "branch_creation": "succeeded",
+    "offline_checks_passed": 30,
+    "model_calls": 0
+  }
+}

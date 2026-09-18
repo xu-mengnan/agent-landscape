@@ -1,0 +1,25 @@
+{
+  "status": "NOT_RUN",
+  "task_count": 35,
+  "repetitions": 3,
+  "schemes": [
+    "minimal-baseline",
+    "candidate-1",
+    "candidate-2",
+    "candidate-3"
+  ],
+  "planned_trials": 420,
+  "executed_trials": 0,
+  "model": null,
+  "model_version": null,
+  "framework_versions": {},
+  "budget": null,
+  "requires": [
+    "exact versions",
+    "real adapters",
+    "model access",
+    "cost budget",
+    "approved tool policy"
+  ],
+  "network_or_paid_calls_allowed_by_this_config": false
+}
