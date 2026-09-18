@@ -1,42 +1,116 @@
-# 能力与责任矩阵
+# Agent 方案对比：一眼看懂版
 
-不是功能数量排名。U表示未验证，不等于不支持。每行只承载已查证范围；价格、成功率、吞吐没有测量，因此不打分。
+> 这张表回答的是“它最适合解决什么”，不是“谁最好”。  
+> 本轮真实模型横向测试尚未执行，因此不做成功率、价格和性能排名。
 
-|对象|层级|编排证据|状态/上下文证据|安全边界|应用仍需负责|实证状态|本轮判断（I）|
-|---|---|---|---|---|---|---|---|
-|OpenAI Agents SDK|SDK/Agent循环|Agent/Runner/handoff [S01]|会话历史 [S03]|输入/输出/工具覆盖不同 [S02]|业务幂等、权威状态、运行环境|D+局部S；U运行|工具型服务候选；避免把guardrail当事务授权|
-|LangGraph|图编排运行时|显式流程及Agent节点 [S06]|checkpointer/store分开 [S07]|按应用设工具/节点边界|持久后端、状态版本、接收方去重|D+局部S；U运行|明确SOP/恢复场景的候选|
-|LangChain|较高层Agent框架|模型/工具/Agent抽象 [S06]|与运行时/应用层配合|不能从抽象层推导完整授权|业务状态、安全与部署|D；U运行|快速Agent开发入口；与LangGraph非互斥|
-|Deep Agents|Harness|子Agent与上下文设施 [S08]|文件/卸载/记忆能力 [S08]|按后端/配置核验|沙箱隔离、长期事实治理|D；U运行|长任务/研究执行的候选|
-|Claude Agent SDK|SDK/Harness接口|工具与子Agent [S10]|会话接口 [S10]|权限/hooks [S10]|进程、隔离、业务审计|D；U运行|文件/命令型任务机制研究|
-|Claude Managed Agents|托管执行服务|托管资源与执行 [S11]|Session/Events [S11]|账户/环境具体核验|数据治理、业务授权与成本|D；Beta；U运行|独立于SDK核算托管取舍|
-|Google ADK 2.0|Agent/工作流框架|图式/动态/协作 [S13]|事件迁移需验证 [S13]|应用与运行环境共同承担|事件兼容、取消、外部幂等|D；U运行|代码化工作流的候选|
-|Microsoft Agent Framework|Agent/工作流框架|Agent+Workflow [S14]|superstep检查点 [S15]|存储反序列化边界 [S15]|稳定拓扑ID、身份、外部效果|D；U运行|已有相关企业技术栈时验证|
-|DeepSeek Harness|插件化Harness|Cordis组合与loop [S16][S17]|持久事件/上下文投影 [S17]|上游明确预览风险 [S18]|隔离、插件治理、业务补偿|D；预览；U运行|隔离PoC；不直接准入关键写链路|
-|CrewAI|Flows/Crews|流程+协作 [S24]|本轮未核验具体后端|U|明确过程、状态与重试契约|D；U运行|补充候选，不参加性能排名|
-|LlamaIndex|检索/Agent框架|FunctionAgent/AgentWorkflow [S25]|检索/记忆需分层评估|U|数据管线和流程正确性分开|D；U运行|知识密集场景补充候选|
-|Dify|可视化平台|工作流节点 [S26]|按部署版本核验|人工节点不等于完整IAM|插件身份、配置治理、回滚|D；U部署|团队配置与发布流程验证|
-|Coze Studio|开源可视化平台|Agent/App/Workflow [S27]|开源/商业版分开|公开网络风险提醒 [S27]|部署加固、身份与配置|D；U部署|隔离自部署验证|
+## 核心方案
 
-源码范围与原始引用见[来源登记册](../sources/registry.md)。本轮30项E实验属于原创可靠性机制，不对应任何一行的SDK成绩。
+|方案|把它理解成什么|适合场景|它帮你解决|你仍然必须自己解决|
+|---|---|---|---|---|
+|**OpenAI Agents SDK**|轻量 Agent SDK|工具型 Agent、快速接入|Agent loop、tools、handoff、session、trace|业务状态、权限、幂等、任务调度|
+|**LangGraph**|Agent 工作流运行时|SOP、状态机、暂停恢复|显式流程、checkpoint、状态推进|持久化选型、业务真值、外部操作去重|
+|**LangChain**|高层 Agent 开发框架|快速搭 Agent|模型/工具/Agent 抽象|生产流程控制、安全和部署|
+|**Deep Agents**|长任务 Harness|研究、文件、复杂上下文|文件、上下文卸载、子Agent|业务权限、沙箱策略、长期事实治理|
+|**Claude Agent SDK**|带工具环境的 Agent SDK / Harness|Coding、Research、文件/命令任务|工具、权限接口、hooks、session、subagents|运行环境隔离、业务审计和幂等|
+|**Claude Managed Agents**|托管 Agent Runtime|希望减少自建执行环境|托管 session / environment / execution|业务授权、数据治理、成本评估|
+|**Google ADK 2.0**|工作流 + Agent 框架|代码化工作流、多种编排|图式/动态/协作流程|事件兼容、外部写入、恢复验证|
+|**Microsoft Agent Framework**|企业 Agent / Workflow 框架|已有 Microsoft 技术栈|Agent、workflow、checkpoint|稳定ID、业务幂等、身份和数据治理|
+|**DeepSeek Harness**|插件化 Agent Harness|架构研究、隔离 PoC|插件、事件、上下文投影|生产安全、隔离、业务补偿|
+|**Dify / Coze Studio**|可视化 Agent 平台|运营/开发共建、快速发布|工作流配置、应用发布、插件|生产权限、版本治理、部署安全|
 
-## 证据来源
+## 产品层
 
-- [S01] [OpenAI Agents SDK overview](https://openai.github.io/openai-agents-python/)。滚动文档；未锁定安装包版本。
-- [S02] [OpenAI Guardrails](https://openai.github.io/openai-agents-python/guardrails/)。滚动文档。
-- [S03] [OpenAI Sessions](https://openai.github.io/openai-agents-python/sessions/)。滚动文档。
-- [S06] [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)。滚动文档。
-- [S07] [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence)。滚动文档；durable-execution入口重定向至此。
-- [S08] [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)。滚动文档。
-- [S10] [Claude Agent SDK overview](https://code.claude.com/docs/en/agent-sdk/overview)。滚动文档。
-- [S11] [Claude Managed Agents overview](https://platform.claude.com/docs/en/managed-agents/overview)。Beta；文档列出 managed-agents-2026-04-01。
-- [S13] [Google ADK 2.0](https://adk.dev/2.0/)。2.0版本系列；Python GA 2026-05-19，Go GA 2026-06-30；非最新补丁声明。
-- [S14] [Microsoft Agent Framework overview](https://learn.microsoft.com/en-us/agent-framework/overview/)。滚动文档；未安装。
-- [S15] [Microsoft workflow checkpoints](https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints)。页面更新标注2026-09-04；Python1.13条目不代表最新版本。
-- [S16] [DeepSeek Harness README](https://github.com/deepseek-ai/deepseek-harness/blob/main/README.md)。开发者预览；滚动main。
-- [S17] [DeepSeek Harness architecture](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/architecture.md)。滚动main；读取架构、事件、turn flow、session log章节；非整库审计。
-- [S18] [DeepSeek Harness safety notice](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md)。开发者预览安全声明。
-- [S24] [CrewAI introduction](https://docs.crewai.com/v1.15.14/en/introduction/index.html)。检索入口重定向文档v1.15.14；不等于最新安装包。
-- [S25] [LlamaIndex Agents](https://developers.llamaindex.ai/python/framework/module_guides/deploying/agents/)。滚动文档；读取Agent/Tools/Multi-Agent章节。
-- [S26] [Dify Workflow Studio](https://www.dify.ai/workflows)。官方产品说明；未部署。
-- [S27] [Coze Studio README](https://github.com/coze-dev/coze-studio/blob/main/README.md)。blob 6f4221d806888d45596156bec6f5599294ea6a2f；读取1–140行。
+|产品|最值得观察什么|
+|---|---|
+|**ChatGPT Work**|如何把复杂任务变成可审阅的完整交付|
+|**Claude Code**|编码 Agent 如何读代码、执行命令、修改并验证|
+|**Codex**|沙箱、审批、网络权限与代码执行如何结合|
+|**Cursor**|交互式 Agent 与人如何不断纠正和协作|
+|**Devin**|长期任务委派、环境操作与人工接管|
+|**Jules**|仓库任务、计划、执行与最终变更交付|
+
+## 按场景选，而不是按热度选
+
+### 场景 1：简单 Tool Calling
+
+优先从轻量 SDK 开始。
+
+```text
+Agent → Tool Gateway → Business Service
+```
+
+如果只是查资料、生成内容、调用几个工具，没有必要一开始就搭复杂多 Agent。
+
+### 场景 2：明确业务 SOP
+
+优先看图/工作流体系。
+
+```text
+状态 A
+ ↓
+条件判断
+ ↓
+Agent
+ ↓
+规则校验
+ ↓
+状态 B
+```
+
+重点候选：LangGraph、ADK、Microsoft Agent Framework。
+
+### 场景 3：Coding / Research 长任务
+
+优先看 Harness。
+
+```text
+Agent
+ ├─ Files
+ ├─ Shell
+ ├─ Search
+ ├─ Context
+ └─ Subagents
+```
+
+重点候选：Claude Agent SDK、Deep Agents，以及相关最终产品。
+
+### 场景 4：低代码 / 团队协同
+
+优先评估 Dify / Coze Studio。
+
+重点不是“LLM 更聪明”，而是：
+
+- 谁能配置；
+- 谁能审批；
+- 如何上线；
+- 如何回滚；
+- 如何看日志。
+
+## 选型时真正应该问的 8 个问题
+
+1. 谁管理**业务状态**？
+2. 谁管理**对话和 Memory**？
+3. 谁保存**工作流进度**？
+4. 工具调用前谁做**权限校验**？
+5. 外部动作如何做**幂等**？
+6. 任务失败后从哪里**恢复**？
+7. 用户取消后如何阻止后续**副作用**？
+8. 成功与否由什么**独立验收**？
+
+如果这 8 个问题说不清楚，再强的模型也不适合直接进入关键生产链路。
+
+---
+
+## 当前研究边界
+
+本轮已经完成文档与局部源码研究，以及 30 项离线机制实验；真实模型横向对照仍为 **0/420**。
+
+因此，这张表用于：
+
+- 架构讨论；
+- PoC 选型；
+- 技术路线收敛。
+
+**不用于宣称某个框架在真实任务中排名第一。**
+
+详细证据与原始来源见 [完整能力与证据资料](research-report.md) 和 [来源登记册](../sources/registry.md)。
